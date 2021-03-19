@@ -1,11 +1,11 @@
 public class Factory {
     public GeneralMap FactorySelection(int data){
-        if(data == 0){
+        if(data == 1){
             return new Hash<String, String>();
-        }else if(data == 1){
-            return new Tree<String, String>();
         }else if(data == 2){
-            return new Linked<String, String>();
+            return new Tree<String, String>();
+        }else if(data == 3){
+            return new LinkedMap<String, String>();
         }
         return null;
     }  

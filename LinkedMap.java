@@ -1,11 +1,14 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-public class Hash<T, L> implements GeneralMap<T, L>{
-    HashMap<T, L> map = new HashMap<T,L>();
+import java.util.Map.Entry;
+import java.util.Set;
 
+public class LinkedMap<T, L> implements GeneralMap<T, L>{
+    LinkedHashMap<T, L> map = new LinkedHashMap<T, L>();
     //para agregar al map
     public void put(T e, L i){
         map.put(e, i);
@@ -49,4 +52,6 @@ public class Hash<T, L> implements GeneralMap<T, L>{
     public void sortByValue(){
         
     }
+        
+    
 }
