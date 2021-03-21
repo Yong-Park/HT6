@@ -62,11 +62,12 @@ public class Main {
                 }else if(eleccionmap==3){
                     operando.nombrecantidad();
                 }else if(eleccionmap==4){
+                    //no funciona buscar como 
                     operando.sortByValue();
                 }else if(eleccionmap==5){
-
+                    operando.read();
                 }else if(eleccionmap==6){
-
+                    
                 }
             }while(eleccionmap !=7);
 

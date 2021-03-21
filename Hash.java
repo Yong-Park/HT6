@@ -49,4 +49,17 @@ public class Hash<T, L> implements GeneralMap<T, L>{
     public void sortByValue(){
         
     }
+
+    public void read(){
+        for (Map.Entry<T, L> mapElement : map.entrySet()) { 
+  
+            //encontrar el key
+            T key = mapElement.getKey(); 
+            // encontrar el valor 
+            L value = mapElement.getValue(); 
+            
+            // print the key : value pair 
+            System.out.println("Carta: " + key + "| Tipo: " + value); 
+        }
+    }
 }

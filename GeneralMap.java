@@ -3,4 +3,5 @@ public interface GeneralMap<T, L>{
     String contain(T e);
     void nombrecantidad();
     void sortByValue();
+    void read();
 }
