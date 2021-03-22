@@ -14,6 +14,10 @@ public class Main {
     static int elegido;
     static int eleccionmap;
 
+    
+    /** 
+     * @param args
+     */
     public static void main (String[] args){
         Scanner scanner = new Scanner(System.in);
         do{
@@ -70,6 +74,10 @@ public class Main {
 
         }while(elegido != 4);
     }
+    
+    /** 
+     * @return int
+     */
     //menu para que escoja el tipo de map que se desea usar
     public static int menu(){
         boolean ciclo=true;
@@ -88,6 +96,10 @@ public class Main {
         }while(ciclo);
         return elegido;
     }
+    
+    /** 
+     * @return int
+     */
     //para verificar que sea un dato valido y este en el limite del menu
     public static int opcion(){
         Scanner scanner = new Scanner(System.in);
@@ -109,6 +121,10 @@ public class Main {
         }while(ciclo_numero);
         return opcion_numero;
     }    
+    
+    /** 
+     * @param lectur
+     */
     //lectura del archivo .txt
     public static void lectura(ArrayList<String> lectur){
         try{
@@ -131,6 +147,10 @@ public class Main {
         }
     }
 
+    
+    /** 
+     * @return int
+     */
     //menu 2 para las opcinoes despues de escoger le tipo de map que desea aplicar
     public static int menu2(){
         boolean ciclo=true;
@@ -152,6 +172,10 @@ public class Main {
         }while(ciclo);
         return elegido;
     }
+    
+    /** 
+     * @return int
+     */
     //opcio para el menu 2 para verificar que ingrese un dato aceptable.
     public static int opcion2(){
         Scanner scanner = new Scanner(System.in);

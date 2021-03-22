@@ -6,11 +6,21 @@ import java.util.TreeMap;
 
 public class Tree<T, L> implements GeneralMap<T, L>{
     Map<T, L> map = new TreeMap<T, L>();
+    
+    /** 
+     * @param e
+     * @param i
+     */
     //para agregar al map
     public void put(T e, L i){
         map.put(e, i);
     }
 
+    
+    /** 
+     * @param e
+     * @return String
+     */
     public String contain(T e){
         if(map.containsKey(e)){
             String s = map.get(e).toString();
@@ -92,6 +102,11 @@ public class Tree<T, L> implements GeneralMap<T, L>{
         }
     }
 
+    
+    /** 
+     * @param map2
+     * @return Map<T, L>
+     */
     public Map<T, L> valueSort (Map<T, L> map2){ 
         // Static Method with return type Map and 
         // extending comparator class which compares values 

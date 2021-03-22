@@ -1,4 +1,9 @@
 public class Factory {
+    
+    /** 
+     * @param data
+     * @return GeneralMap
+     */
     public GeneralMap FactorySelection(int data){
         if(data == 1){
             return new Hash<String, String>();

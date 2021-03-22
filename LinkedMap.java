@@ -10,11 +10,21 @@ import java.util.Set;
 public class LinkedMap<T, L> implements GeneralMap<T, L>{
     public Map<T, L> map = new LinkedHashMap<T, L>();
     
+    
+    /** 
+     * @param e
+     * @param i
+     */
     //para agregar al map
     public void put(T e, L i){
         map.put(e, i);
     }
 
+    
+    /** 
+     * @param e
+     * @return String
+     */
     public String contain(T e){
         if(map.containsKey(e)){
             String s = map.get(e).toString();

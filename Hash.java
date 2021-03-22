@@ -9,11 +9,21 @@ import java.util.LinkedList;
 public class Hash<T, L> implements GeneralMap<T, L>{
     Map<T, L> map = new HashMap<T,L>();
 
+    
+    /** 
+     * @param e
+     * @param i
+     */
     //para agregar al map
     public void put(T e, L i){
         map.put(e, i);
     }
 
+    
+    /** 
+     * @param e
+     * @return String
+     */
     public String contain(T e){
         if(map.containsKey(e)){
             String s = map.get(e).toString();
