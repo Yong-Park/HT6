@@ -4,4 +4,5 @@ public interface GeneralMap<T, L>{
     void nombrecantidad();
     void sortByValue();
     void read();
+    void readOrden();
 }

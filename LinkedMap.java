@@ -2,15 +2,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.HashMap;  
 
 public class LinkedMap<T, L> implements GeneralMap<T, L>{
-    LinkedHashMap<T, L> map = new LinkedHashMap<T, L>();
+    public Map<T, L> map = new LinkedHashMap<T, L>();
     
     //para agregar al map
     public void put(T e, L i){
@@ -52,19 +50,49 @@ public class LinkedMap<T, L> implements GeneralMap<T, L>{
         System.out.println("Cantidad total de trampas: " + trampa);
     }
 
+    //codigo obtenido de https://www.benchresources.net/java-how-to-sort-linkedhashmap-by-its-values/
     public void sortByValue(){ 
-        /*Comparator valueComparator = new Comparator() {
-            public int compare(String k1, String k2) {
-             String v1 = map.get(k1);
-             String v2 = map.get(k2);
-             int compare = v1.compareTo(v2);
-             if (compare == 0) {
-              return 1;
-             } else {
-              return compare;
-             }*/
+        int monstruo = 0;
+        int hechizo = 0;
+        int trampa = 0;
+        // 1. get entrySet from LinkedHashMap object
+        Set<Map.Entry<T, L>> companyFounderSet = map.entrySet();
+ 
+        // 2. convert LinkedHashMap to List of Map.Entry
+        List<Map.Entry<T, L>> companyFounderListEntry = new ArrayList<Map.Entry<T, L>>(companyFounderSet);
+ 
+        // 3. sort list of entries using Collections class'
+        // utility method sort(ls, cmptr)
+        Collections.sort(companyFounderListEntry, 
+                new Comparator<Map.Entry<T, L>>() {
+ 
+            @Override
+            public int compare(Entry<T, L> es1, Entry<T, L> es2) {
+                return ((String) es1.getValue()).compareTo((String) es2.getValue());
+            }
+        });
+ 
+        // 4. clear original LinkedHashMap
+        map.clear();
+ 
+        // 5. iterating list and storing in LinkedHahsMap
+        for(Entry<T, L> mapordenado : companyFounderListEntry){
+            map.put(mapordenado.getKey(), mapordenado.getValue());
+        }
+        for(Map.Entry<T, L> lhmap : map.entrySet()){
+            System.out.println("Nombre : "  + lhmap.getKey() + " | Tipo : "  + lhmap.getValue());
+            if(lhmap.getValue().equals("Monstruo")){
+                monstruo++;
+            }else if(lhmap.getValue().equals("Hechizo")){
+                hechizo++;
+            }else{
+                trampa ++;
+            }
+        } 
+        System.out.println("Cantidad total de monstruos: " + monstruo);
+        System.out.println("Cantidad total de hechizos: " + hechizo);
+        System.out.println("Cantidad total de trampas: " + trampa);
     }
-
 
     public void read(){
         for (Map.Entry<T, L> mapElement : map.entrySet()) { 
@@ -77,6 +105,36 @@ public class LinkedMap<T, L> implements GeneralMap<T, L>{
             // print the key : value pair 
             System.out.println("Carta: " + key + "| Tipo: " + value); 
         }
+    }
+
+    public void readOrden(){
+        // 1. get entrySet from LinkedHashMap object
+        Set<Map.Entry<T, L>> companyFounderSet = map.entrySet();
+ 
+        // 2. convert LinkedHashMap to List of Map.Entry
+        List<Map.Entry<T, L>> companyFounderListEntry = new ArrayList<Map.Entry<T, L>>(companyFounderSet);
+ 
+        // 3. sort list of entries using Collections class'
+        // utility method sort(ls, cmptr)
+        Collections.sort(companyFounderListEntry, 
+                new Comparator<Map.Entry<T, L>>() {
+ 
+            @Override
+            public int compare(Entry<T, L> es1, Entry<T, L> es2) {
+                return ((String) es1.getValue()).compareTo((String) es2.getValue());
+            }
+        });
+ 
+        // 4. clear original LinkedHashMap
+        map.clear();
+ 
+        // 5. iterating list and storing in LinkedHahsMap
+        for(Entry<T, L> mapordenado : companyFounderListEntry){
+            map.put(mapordenado.getKey(), mapordenado.getValue());
+        }
+        for(Map.Entry<T, L> lhmap : map.entrySet()){
+            System.out.println("Nombre : "  + lhmap.getKey() + " | Tipo : "  + lhmap.getValue());
+        } 
     }
         
 }

@@ -31,8 +31,6 @@ public class Main {
                 String str[] = s.split(separador);
                 List<String> al = new ArrayList<String>();
                 al = Arrays.asList(str);
-                //esto es solo para revisar 
-                System.out.println(al);
                 //agregar al hash correspondiente
                 operando.put(al.get(0), al.get(1));
             }
@@ -62,12 +60,11 @@ public class Main {
                 }else if(eleccionmap==3){
                     operando.nombrecantidad();
                 }else if(eleccionmap==4){
-                    //no funciona buscar como 
                     operando.sortByValue();
                 }else if(eleccionmap==5){
                     operando.read();
                 }else if(eleccionmap==6){
-                    
+                    operando.readOrden();
                 }
             }while(eleccionmap !=7);
 

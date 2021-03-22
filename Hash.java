@@ -1,10 +1,13 @@
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.HashMap;
+import java.util.LinkedList;
+
 public class Hash<T, L> implements GeneralMap<T, L>{
-    HashMap<T, L> map = new HashMap<T,L>();
+    Map<T, L> map = new HashMap<T,L>();
 
     //para agregar al map
     public void put(T e, L i){
@@ -45,9 +48,32 @@ public class Hash<T, L> implements GeneralMap<T, L>{
         System.out.println("Cantidad total de hechizos: " + hechizo);
         System.out.println("Cantidad total de trampas: " + trampa);
     }
-
-    public void sortByValue(){
-        
+    //codigo obtenido de https://www.javatpoint.com/how-to-sort-hashmap-by-value#:~:text=In%20Java%2C%20sorting%20HashMap%20by,convert%20Set%20into%20the%20List.
+    public void sortByValue(){ 
+        int monstruo = 0;
+        int hechizo = 0;
+        int trampa = 0;
+        //convert HashMap into List   
+        List<Entry<T, L>> list = new LinkedList<Entry<T, L>>(map.entrySet());  
+        //sorting the list elements  
+        Collections.sort(list, new Comparator<Entry<T, L>>()   {  
+            public int compare(Entry<T, L> o1, Entry<T, L> o2){   
+                return ((String) o1.getValue()).compareTo((String)o2.getValue());    
+            }  
+        });  
+        for (Entry<T, L> entry : list){  
+            System.out.println("Nombre: " + entry.getKey() +" | Tipo: " + entry.getValue());   
+            if(entry.getValue().equals("Monstruo")){
+                monstruo++;
+            }else if(entry.getValue().equals("Hechizo")){
+                hechizo++;
+            }else{
+                trampa ++;
+            }
+        }     
+        System.out.println("Cantidad total de monstruos: " + monstruo);
+        System.out.println("Cantidad total de hechizos: " + hechizo);
+        System.out.println("Cantidad total de trampas: " + trampa); 
     }
 
     public void read(){
@@ -61,5 +87,19 @@ public class Hash<T, L> implements GeneralMap<T, L>{
             // print the key : value pair 
             System.out.println("Carta: " + key + "| Tipo: " + value); 
         }
+    }
+
+    public void readOrden(){
+        //convert HashMap into List   
+        List<Entry<T, L>> list = new LinkedList<Entry<T, L>>(map.entrySet());  
+        //sorting the list elements  
+        Collections.sort(list, new Comparator<Entry<T, L>>()   {  
+            public int compare(Entry<T, L> o1, Entry<T, L> o2){   
+                return ((String) o1.getValue()).compareTo((String)o2.getValue());    
+            }  
+        });  
+        for (Entry<T, L> entry : list){  
+            System.out.println("Nombre: " + entry.getKey() +" | Tipo: " + entry.getValue());   
+        }  
     }
 }
