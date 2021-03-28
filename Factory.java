@@ -1,8 +1,9 @@
 public class Factory {
-    
-    /** 
-     * @param data
-     * @return GeneralMap
+
+    /**
+     * Factory que regresa el tipo de mapa elegido
+     * @param data El numero de la implementacion a utilizar
+     * @return GeneralMap El tipo de mapa elegido
      */
     public GeneralMap FactorySelection(int data){
         if(data == 1){
@@ -13,5 +14,5 @@ public class Factory {
             return new LinkedMap<String, String>();
         }
         return null;
-    }  
+    }
 }

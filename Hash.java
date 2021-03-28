@@ -9,18 +9,20 @@ import java.util.LinkedList;
 public class Hash<T, L> implements GeneralMap<T, L>{
     Map<T, L> map = new HashMap<T,L>();
 
-    
-    /** 
-     * @param e
-     * @param i
+
+    /**
+     * Agrega al mapa
+     * @param e Llave
+     * @param i Valor
      */
     //para agregar al map
     public void put(T e, L i){
         map.put(e, i);
     }
 
-    
-    /** 
+
+    /**
+     * Verifica si el parametro existe en el mapa
      * @param e
      * @return String
      */
@@ -32,16 +34,19 @@ public class Hash<T, L> implements GeneralMap<T, L>{
         return "No existe esta carta";
     }
 
+    /**
+     * Imprime todas las cartas, su tipo y cantidad
+     */
     public void nombrecantidad(){
         int monstruo = 0;
         int hechizo = 0;
         int trampa = 0;
-        for (Map.Entry<T, L> mapElement : map.entrySet()) { 
-  
+        for (Map.Entry<T, L> mapElement : map.entrySet()) {
+
             //encontrar el key
-            T key = mapElement.getKey(); 
-            // encontrar el valor 
-            L value = mapElement.getValue(); 
+            T key = mapElement.getKey();
+            // encontrar el valor
+            L value = mapElement.getValue();
             if(value.equals("Monstruo")){
                 monstruo++;
             }else if(value.equals("Hechizo")){
@@ -49,8 +54,8 @@ public class Hash<T, L> implements GeneralMap<T, L>{
             }else{
                 trampa ++;
             }
-            // print the key : value pair 
-            System.out.println("Carta: " + key + "| Tipo: " + value); 
+            // print the key : value pair
+            System.out.println("Carta: " + key + "| Tipo: " + value);
         }
         //mostrar la cantidad total de cada tipo de carta que tiene
         System.out.println("Esto esta en orden por tipo");
@@ -58,21 +63,25 @@ public class Hash<T, L> implements GeneralMap<T, L>{
         System.out.println("Cantidad total de hechizos: " + hechizo);
         System.out.println("Cantidad total de trampas: " + trampa);
     }
-    //codigo obtenido de https://www.javatpoint.com/how-to-sort-hashmap-by-value#:~:text=In%20Java%2C%20sorting%20HashMap%20by,convert%20Set%20into%20the%20List.
-    public void sortByValue(){ 
+
+    /**
+     * Ordena las cartas por su tipo
+     * Obtenido de https://www.javatpoint.com/how-to-sort-hashmap-by-value#:~:text=In%20Java%2C%20sorting%20HashMap%20by,convert%20Set%20into%20the%20List.
+     */
+    public void sortByValue(){
         int monstruo = 0;
         int hechizo = 0;
         int trampa = 0;
-        //convert HashMap into List   
-        List<Entry<T, L>> list = new LinkedList<Entry<T, L>>(map.entrySet());  
-        //sorting the list elements  
-        Collections.sort(list, new Comparator<Entry<T, L>>()   {  
-            public int compare(Entry<T, L> o1, Entry<T, L> o2){   
-                return ((String) o1.getValue()).compareTo((String)o2.getValue());    
-            }  
-        });  
-        for (Entry<T, L> entry : list){  
-            System.out.println("Nombre: " + entry.getKey() +" | Tipo: " + entry.getValue());   
+        //convert HashMap into List
+        List<Entry<T, L>> list = new LinkedList<Entry<T, L>>(map.entrySet());
+        //sorting the list elements
+        Collections.sort(list, new Comparator<Entry<T, L>>()   {
+            public int compare(Entry<T, L> o1, Entry<T, L> o2){
+                return ((String) o1.getValue()).compareTo((String)o2.getValue());
+            }
+        });
+        for (Entry<T, L> entry : list){
+            System.out.println("Nombre: " + entry.getKey() +" | Tipo: " + entry.getValue());
             if(entry.getValue().equals("Monstruo")){
                 monstruo++;
             }else if(entry.getValue().equals("Hechizo")){
@@ -80,36 +89,42 @@ public class Hash<T, L> implements GeneralMap<T, L>{
             }else{
                 trampa ++;
             }
-        }     
+        }
         System.out.println("Cantidad total de monstruos: " + monstruo);
         System.out.println("Cantidad total de hechizos: " + hechizo);
-        System.out.println("Cantidad total de trampas: " + trampa); 
+        System.out.println("Cantidad total de trampas: " + trampa);
     }
 
+    /**
+     * Imprime las cartas en el orden que esten
+     */
     public void read(){
-        for (Map.Entry<T, L> mapElement : map.entrySet()) { 
-  
+        for (Map.Entry<T, L> mapElement : map.entrySet()) {
+
             //encontrar el key
-            T key = mapElement.getKey(); 
-            // encontrar el valor 
-            L value = mapElement.getValue(); 
-            
-            // print the key : value pair 
-            System.out.println("Carta: " + key + "| Tipo: " + value); 
+            T key = mapElement.getKey();
+            // encontrar el valor
+            L value = mapElement.getValue();
+
+            // print the key : value pair
+            System.out.println("Carta: " + key + "| Tipo: " + value);
         }
     }
 
+    /**
+     * Imprime las cartas en orden
+     */
     public void readOrden(){
-        //convert HashMap into List   
-        List<Entry<T, L>> list = new LinkedList<Entry<T, L>>(map.entrySet());  
-        //sorting the list elements  
-        Collections.sort(list, new Comparator<Entry<T, L>>()   {  
-            public int compare(Entry<T, L> o1, Entry<T, L> o2){   
-                return ((String) o1.getValue()).compareTo((String)o2.getValue());    
-            }  
-        });  
-        for (Entry<T, L> entry : list){  
-            System.out.println("Nombre: " + entry.getKey() +" | Tipo: " + entry.getValue());   
-        }  
+        //convert HashMap into List
+        List<Entry<T, L>> list = new LinkedList<Entry<T, L>>(map.entrySet());
+        //sorting the list elements
+        Collections.sort(list, new Comparator<Entry<T, L>>()   {
+            public int compare(Entry<T, L> o1, Entry<T, L> o2){
+                return ((String) o1.getValue()).compareTo((String)o2.getValue());
+            }
+        });
+        for (Entry<T, L> entry : list){
+            System.out.println("Nombre: " + entry.getKey() +" | Tipo: " + entry.getValue());
+        }
     }
 }
