@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"<Unnamed>","l":"Factory"},{"p":"<Unnamed>","l":"GeneralMap"},{"p":"<Unnamed>","l":"Hash"},{"p":"<Unnamed>","l":"LinkedMap"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"Tree"}]
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Factory"},{"p":"<Unnamed>","l":"GeneralMap"},{"p":"<Unnamed>","l":"Hash"},{"p":"<Unnamed>","l":"LinkedMap"},{"p":"<Unnamed>","l":"main"},{"p":"<Unnamed>","l":"Tree"}];updateSearchResults();
